@@ -234,8 +234,6 @@ return new Action<IConfigContext>((IConfigContext context) =>
 
     var workspaces = context.Workspaces;
 
-    manager.Subscribe(alt, Keys.D0, () => context.Enabled = !context.Enabled, "toogle enable/disable workspacer");
-
     // manager.UnsubscribeAll();
     // manager.Unsubscribe(alt, Keys.Enter);
     manager.Unsubscribe(alt, Keys.Right);
@@ -273,11 +271,9 @@ return new Action<IConfigContext>((IConfigContext context) =>
     // manager.Subscribe(altShift, Keys.Tab, () => workspaces.FocusedWorkspace.SwapFocusAndPreviousWindow(), "swap focus and previous window");
     // manager.Subscribe(alt, Keys.Enter, () => workspaces.FocusedWorkspace.SwapFocusAndPrimaryWindow(), "swap focus and primary window");
 
-    // manager.Subscribe(altShift, Keys.Add, () => gapPlugin.IncrementOuterGap(), "increment outer gap");
-    // manager.Subscribe(altShift, Keys.Subtract, () => gapPlugin.DecrementOuterGap(), "decrement outer gap");
-
     // Other shortcuts
     manager.Subscribe(altCtrl, Keys.P, () => actionMenu.ShowMenu(actionMenuBuilder), "show menu");
+    manager.Subscribe(alt, Keys.D0, () => context.Enabled = !context.Enabled, "toogle enable/disable workspacer");
     // manager.Subscribe(altShift, Keys.Escape, () => context.Enabled = !context.Enabled, "toggle enabled/disabled");
     // manager.Subscribe(altShift, Keys.I, () => context.ToggleConsoleWindow(), "toggle console window");
   };
