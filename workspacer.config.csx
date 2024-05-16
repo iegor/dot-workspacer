@@ -198,6 +198,8 @@ return new Action<IConfigContext>((IConfigContext context) =>
         // Workspacer
         menuBuilder.Add("toggle keybind helper", () => context.Keybinds.ShowKeybindDialog());
         menuBuilder.Add("toggle enabled", () => context.Enabled = !context.Enabled);
+        menuBuilder.Add("gap increment", () => gapPlugin.IncrementInnerGap());
+        menuBuilder.Add("gap decrement", () => gapPlugin.DecrementInnerGap());
         menuBuilder.Add("restart", () => context.Restart());
         menuBuilder.Add("quit", () => context.Quit());
 
@@ -264,10 +266,6 @@ return new Action<IConfigContext>((IConfigContext context) =>
         // manager.Subscribe(alt, Keys.Tab, () => workspaces.FocusedWorkspace.SwapFocusAndNextWindow(), "swap focus and next window");
         // manager.Subscribe(altShift, Keys.Tab, () => workspaces.FocusedWorkspace.SwapFocusAndPreviousWindow(), "swap focus and previous window");
         // manager.Subscribe(alt, Keys.Enter, () => workspaces.FocusedWorkspace.SwapFocusAndPrimaryWindow(), "swap focus and primary window");
-
-        // Add, Subtract keys
-        // manager.Subscribe(altCtrl, Keys.Add, () => gapPlugin.IncrementInnerGap(), "increment inner gap");
-        // manager.Subscribe(altCtrl, Keys.Subtract, () => gapPlugin.DecrementInnerGap(), "decrement inner gap");
 
         // manager.Subscribe(altShift, Keys.Add, () => gapPlugin.IncrementOuterGap(), "increment outer gap");
         // manager.Subscribe(altShift, Keys.Subtract, () => gapPlugin.DecrementOuterGap(), "decrement outer gap");
