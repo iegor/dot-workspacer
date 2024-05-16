@@ -80,7 +80,7 @@ return new Action<IConfigContext>((IConfigContext context) =>
     ("7", defaultLayouts()),
     ("8", defaultLayouts()),
     ("9", defaultLayouts()),
-    ("scr", defaultLayouts()),
+    // ("scr", defaultLayouts()),
     ("trash", new ILayoutEngine[] { new HorzLayoutEngine(), new TallLayoutEngine() }),
   };
 
@@ -122,6 +122,12 @@ return new Action<IConfigContext>((IConfigContext context) =>
 
   //context.WindowRouter.RouteProcessName("Spotify", "🎶");
   //context.WindowRouter.RouteTitle("Microsoft To Do", "todo");
+
+  // context.WindowRouter.RouteProcessName("acwebhelper", "trash");
+  // context.WindowRouter.RouteProcessName("vpnui", "trash");
+  // context.WindowRouter.RouteProcessName("Microsoft.AAD.BrokerPlugin", "trash");
+  // context.WindowRouter.RouteProcessName("msedgewebview2", "trash");
+  // context.WindowRouter.RouteTitle("Windows Security", "trash");
 
   /* Action menu */
   var actionMenu = context.AddActionMenu(new ActionMenuPluginConfig()
