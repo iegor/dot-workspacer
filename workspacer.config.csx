@@ -232,17 +232,22 @@ return new Action<IConfigContext>((IConfigContext context) =>
         // manager.Unsubscribe(alt, Keys.Enter);
         manager.Unsubscribe(alt, Keys.Right);
         manager.Unsubscribe(alt, Keys.Left);
+        manager.Unsubscribe(altCtrl, Keys.Right);
+        manager.Unsubscribe(altCtrl, Keys.Left);
+        manager.Unsubscribe(altCtrlShift, Keys.Right);
+        manager.Unsubscribe(altCtrlShift, Keys.Left);
 
         manager.Subscribe(win, Keys.Enter, () => Process.Start("C:\\Program Files\\Git\\git-bash.exe", "--cd /"));
         manager.Subscribe(winShift, Keys.Enter, () => Process.Start("cmd.exe"));
 
         // manager.Subscribe(MouseEvent.MouseWheel, () => workspaces.SwitchFocusedMonitorToMouseLocation());
-
         // manager.Subscribe(MouseEvent.LButtonDown, () => workspaces.SwitchFocusedMonitorToMouseLocation());
 
         // workspace manipulation
         manager.Subscribe(altCtrl, Keys.PageUp, () => workspaces.SwitchToPreviousWorkspace(), "switch to previous workspace");
         manager.Subscribe(altCtrl, Keys.PageDown, () => workspaces.SwitchToNextWorkspace(), "switch to next workspace");
+        manager.Subscribe(altCtrl, Keys.Left, () => workspaces.SwitchToPreviousWorkspace(), "switch to previous workspace");
+        manager.Subscribe(altCtrl, Keys.Right, () => workspaces.SwitchToNextWorkspace(), "switch to next workspace");
 
         // manager.Subscribe(altShift, Keys.PageDown, () => workspaces.MoveFocusedWindowToNextMonitor(), "move focused window to next monitor");
         // manager.Subscribe(altShift, Keys.PageUp, () => workspaces.MoveFocusedWindowToPreviousMonitor(), "move focused window to previous monitor");
